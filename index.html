@@ -38,7 +38,7 @@
   --gold-dim:rgba(201,162,75,.45);
   --white:#F4EFE6;
   --white-dim:rgba(244,239,230,.68);
-  --white-faint:rgba(244,239,230,.35);
+  --white-faint:rgba(244,239,230,.55);
   --line:rgba(201,162,75,.28);
   --script:"Allura",cursive;
   --serif:"Marcellus",Georgia,serif;
@@ -67,6 +67,12 @@ img{max-width:100%;display:block}
   color:var(--gold);
 }
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.skip-link{
+  position:absolute;left:-9999px;top:0;z-index:100;
+  background:var(--gold);color:var(--black);font-weight:500;
+  padding:12px 22px;border-radius:0 0 6px 0;text-decoration:none;
+}
+.skip-link:focus{left:0}
 body::before{
   content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
   background:radial-gradient(ellipse at 20% -10%,rgba(201,162,75,.07),transparent 55%),
@@ -249,6 +255,7 @@ section{padding:88px 0}
   letter-spacing:.22em;text-transform:uppercase;text-align:center;padding:16px;
 }
 .gal-slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.gal-slot video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .gal-slot:hover img{transform:scale(1.04)}
 
 /* ---------- Testimonial ---------- */
@@ -315,6 +322,8 @@ footer .fine{font-size:12.5px;letter-spacing:.12em;color:var(--white-faint);text
 </style>
 </head>
 <body>
+
+<a href="#top" class="skip-link">Skip to main content</a>
 
 <div class="announce" id="announce" role="status"></div>
 
@@ -391,10 +400,10 @@ footer .fine{font-size:12.5px;letter-spacing:.12em;color:var(--white-faint);text
     <div class="wrap story-grid">
       <div class="reveal">
         <p class="eyebrow">Our Story</p>
-        <p class="quote">"Start the business. People will support you while figuring things out."</p>
-        <p>That's how The Soul Spot began — not with a restaurant lease or a big loan, but with recipes we grew up on and the decision to just start.</p>
-        <p><b>We're a Black-owned kitchen in Raleigh</b> bringing soul food and Caribbean flavor together on one plate: oxtails braised till they fall off the bone, rasta pasta people text us about days later, fish fried to order on Fridays.</p>
-        <p>Every plate is made with love and served with soul. When you order from us, you're pulling up a chair at our family's table.</p>
+        <p class="quote">"Every dish is a tribute to the lessons she taught me."</p>
+        <p>My passion for cooking began in my Aunt Kelly's kitchen. Growing up, I spent countless Sundays at her home surrounded by family, laughter, and incredible Southern cooking. Watching her cook taught me more than recipes. It taught me the importance of hospitality, tradition, and feeding people with love.</p>
+        <p><b>Aunt Kelly's influence became the foundation of The Soul Spot</b> and the inspiration behind our soul food offerings. The Caribbean side of our story comes from my husband, Richi, whose Jamaican roots bring bold island flavors and traditions to our menu.</p>
+        <p>Together, we've blended Southern comfort and Caribbean culture into one table. Every meal is prepared with love, and every guest is treated like family. Dedicated to Aunt Kelly, whose kitchen started it all.</p>
       </div>
       <div class="photo-slot reveal" id="story-photo">Photo: the owners in the kitchen<br>(swap in real photography)</div>
     </div>
@@ -417,6 +426,11 @@ footer .fine{font-size:12.5px;letter-spacing:.12em;color:var(--white-faint);text
       <span class="quote-mark" aria-hidden="true">"</span>
       <blockquote id="testimonial-text">The pasta is criminally delicious! I had such a great time.</blockquote>
       <cite id="testimonial-name">— A very happy customer</cite>
+      <div id="testimonial-video-wrap" style="display:none;margin-top:40px">
+        <video id="testimonial-video" controls preload="metadata" playsinline
+               style="max-width:340px;width:100%;border:1px solid var(--line);border-radius:12px;background:#000"></video>
+        <p style="margin-top:12px;font-family:var(--serif);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)">Hear it from our customers</p>
+      </div>
     </div>
   </section>
 
@@ -480,12 +494,50 @@ footer .fine{font-size:12.5px;letter-spacing:.12em;color:var(--white-faint);text
         <span class="k">Email</span>
         <span class="v"><a id="email-link" href="#"></a></span>
       </div>
+      <div class="contact-item" id="hours-item" style="display:none">
+        <span class="k">Hours</span>
+        <span class="v" id="hours-text"></span>
+      </div>
       <div class="contact-item">
         <span class="k">Serving</span>
         <span class="v">Raleigh &amp; the Triangle, NC</span>
       </div>
     </div>
   </div>
+
+  <!-- PRIVACY POLICY -->
+  <section id="privacy" style="padding:56px 0;border-top:1px solid var(--line)">
+    <div class="wrap" style="max-width:760px">
+      <details>
+        <summary style="cursor:pointer;font-family:var(--serif);font-size:14px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);padding:8px 0">Privacy Policy</summary>
+        <div style="margin-top:22px;font-size:15px;color:var(--white-dim);line-height:1.75">
+          <p style="margin-bottom:14px"><strong style="color:var(--white)">Effective date: July 15, 2026</strong></p>
+          <p style="margin-bottom:14px">The Soul Spot ("we," "us") operates this website to share our menu and take catering inquiries. We keep things simple, and that includes how we handle your information.</p>
+
+          <p style="margin-bottom:6px;color:var(--white)"><strong>What we collect</strong></p>
+          <p style="margin-bottom:14px">The only personal information we collect is what you choose to send us through the catering inquiry form: your name, your email or phone number, and the details of your event. We do not collect anything else, and we do not use cookies, advertising trackers, or analytics tools on this site.</p>
+
+          <p style="margin-bottom:6px;color:var(--white)"><strong>How we use it</strong></p>
+          <p style="margin-bottom:14px">Inquiry information is used for one purpose: responding to you about your event. We do not sell, rent, or share your information with anyone for marketing.</p>
+
+          <p style="margin-bottom:6px;color:var(--white)"><strong>Who processes it</strong></p>
+          <p style="margin-bottom:14px">Form submissions are processed by Netlify, the service that hosts this website, and delivered to our email. Netlify may keep standard technical logs (such as IP addresses) as part of operating its hosting service. Fonts on this site are served by Google Fonts, and images and video are served by GitHub, which means your browser requests files from those services when the page loads. Each of these providers has its own privacy policy governing that technical data.</p>
+
+          <p style="margin-bottom:6px;color:var(--white)"><strong>How long we keep it</strong></p>
+          <p style="margin-bottom:14px">We keep inquiry details as long as needed to handle your event and our business records, and we delete them on request.</p>
+
+          <p style="margin-bottom:6px;color:var(--white)"><strong>Your choices</strong></p>
+          <p style="margin-bottom:14px">You can ask us at any time to see, correct, or delete the information you sent us. Email <a href="mailto:TheSoulSpot919@gmail.com" style="color:var(--gold-bright)">TheSoulSpot919@gmail.com</a> and we will take care of it.</p>
+
+          <p style="margin-bottom:6px;color:var(--white)"><strong>Children</strong></p>
+          <p style="margin-bottom:14px">This site is not directed at children under 13, and we do not knowingly collect information from them.</p>
+
+          <p style="margin-bottom:6px;color:var(--white)"><strong>Changes</strong></p>
+          <p>If this policy changes, we will update this page and the effective date above.</p>
+        </div>
+      </details>
+    </div>
+  </section>
 
 </main>
 
@@ -504,6 +556,7 @@ footer .fine{font-size:12.5px;letter-spacing:.12em;color:var(--white-faint);text
     <a href="https://www.instagram.com/t.hesoulspot/" rel="noopener">Instagram</a>
     <a href="#menu">Menu</a>
     <a href="#catering">Catering</a>
+    <a href="#privacy">Privacy</a>
   </div>
   <p class="fine">© <span id="year"></span> The Soul Spot · Black-Owned · Raleigh, NC</p>
 </footer>
@@ -523,8 +576,8 @@ footer .fine{font-size:12.5px;letter-spacing:.12em;color:var(--white-faint);text
    so the site never looks broken, even if the sheet is down.
    Full setup steps are in SETUP-GUIDE.md.
    ============================================================ */
-const MENU_CSV     = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQdbyl9SetsmzDotpCF-XK4rAvO5Vjc-olLZ1q2NlE6ToChyIwE1xMKRwmuv0NznJi4V2f98nOe1v2f/pub?gid=323325902&single=true&output=csv";  // published CSV link for the "Menu" tab
-const SETTINGS_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQdbyl9SetsmzDotpCF-XK4rAvO5Vjc-olLZ1q2NlE6ToChyIwE1xMKRwmuv0NznJi4";  // published CSV link for the "Settings" tab
+const MENU_CSV     = "";  // published CSV link for the "Menu" tab
+const SETTINGS_CSV = "";  // published CSV link for the "Settings" tab
 
 /* ---------------- Defaults (used when sheet not linked) ---------------- */
 const DEFAULT_MENU = {
@@ -552,18 +605,22 @@ const DEFAULT_MENU = {
 };
 
 /* Settings keys the sheet can override:
-   announcement, phone, email, order_note,
-   testimonial, testimonial_name,
-   story_photo (image URL), gallery1 … gallery6 (image URLs) */
+   announcement, phone, email, hours, order_note,
+   testimonial, testimonial_name, testimonial_video (mp4 URL),
+   story_photo (image URL), gallery1 … gallery6 (image URLs),
+   video1, video2 (mp4 URLs — short muted looping food clips in the gallery) */
 const DEFAULT_SETTINGS = {
   announcement: "",
   phone: "",
   email: "",
+  hours: "",
   order_note: "Deliveries Available",
   testimonial: "The pasta is criminally delicious! I had such a great time.",
   testimonial_name: "— A very happy customer",
+  testimonial_video: "",
   story_photo: "",
-  gallery1:"", gallery2:"", gallery3:"", gallery4:"", gallery5:"", gallery6:""
+  gallery1:"", gallery2:"", gallery3:"", gallery4:"", gallery5:"", gallery6:"",
+  video1:"", video2:""
 };
 
 /* ---------------- Rendering ---------------- */
@@ -611,6 +668,10 @@ function applySettings(s){
     p.textContent = set.phone;
     p.href = "tel:" + set.phone.replace(/[^\d+]/g,"");
   }
+  if(set.hours){
+    document.getElementById("hours-item").style.display = "";
+    document.getElementById("hours-text").textContent = set.hours;
+  }
   if(set.email){
     document.getElementById("email-item").style.display = "";
     const e = document.getElementById("email-link");
@@ -626,6 +687,28 @@ function applySettings(s){
   }
   const gal = document.getElementById("gal-grid");
   gal.innerHTML = "";
+  // video tiles first — muted looping food clips, shown reel-style
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const videoLabels = {1:"Video: baked macaroni and cheese fresh from the oven", 2:"Video: jerk seafood served in a pineapple bowl"};
+  for(let v=1; v<=2; v++){
+    const vurl = set["video"+v];
+    if(!vurl) continue;
+    const slot = document.createElement("div");
+    slot.className = "gal-slot reveal";
+    const vid = document.createElement("video");
+    vid.src = vurl;
+    vid.muted = true; vid.loop = true;
+    vid.playsInline = true; vid.setAttribute("playsinline","");
+    vid.preload = "metadata";
+    vid.setAttribute("aria-label", videoLabels[v] || "Video of our food");
+    if(reduceMotion){
+      vid.controls = true;   // user starts it themselves
+    } else {
+      vid.autoplay = true;
+    }
+    slot.appendChild(vid);
+    gal.appendChild(slot);
+  }
   for(let i=1;i<=6;i++){
     const url = set["gallery"+i];
     const slot = document.createElement("div");
@@ -638,6 +721,15 @@ function applySettings(s){
       slot.textContent = "Photo " + i;
     }
     gal.appendChild(slot);
+  }
+  // testimonial video — click to play, never autoplays (it has sound)
+  if(set.testimonial_video){
+    const wrap = document.getElementById("testimonial-video-wrap");
+    if(wrap){
+      wrap.style.display = "";
+      const tv = document.getElementById("testimonial-video");
+      tv.src = set.testimonial_video;
+    }
   }
   observeReveals();
 }
