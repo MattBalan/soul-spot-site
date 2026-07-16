@@ -235,10 +235,8 @@ section{padding:88px 0}
   color:var(--gold-bright);margin:26px 0;
 }
 .photo-slot{
-  aspect-ratio:4/5;border:1px solid var(--line);border-radius:3px;
-  display:flex;align-items:center;justify-content:center;position:relative;
-  color:var(--white-faint);font-family:var(--serif);font-size:12px;
-  letter-spacing:.24em;text-transform:uppercase;text-align:center;padding:24px;
+  aspect-ratio:3/2;border:1px solid var(--line);border-radius:3px;
+  display:none;align-items:center;justify-content:center;position:relative;
   background:var(--char-2);overflow:hidden;
 }
 .photo-slot::before{content:"";position:absolute;inset:9px;border:1px solid rgba(201,162,75,.16);border-radius:2px;pointer-events:none;z-index:2}
@@ -246,17 +244,19 @@ section{padding:88px 0}
 
 /* ---------- Gallery ---------- */
 .gallery{border-bottom:1px solid var(--line);background:var(--char)}
+.reel-row{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.reel{
+  width:min(250px,42vw);aspect-ratio:9/16;border:1px solid var(--line);border-radius:3px;
+  background:var(--black);position:relative;overflow:hidden;
+}
+.reel video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 @media (max-width:720px){.gal-grid{grid-template-columns:repeat(2,1fr)}}
 .gal-slot{
-  aspect-ratio:1/1;border:1px solid var(--line);border-radius:3px;
+  aspect-ratio:3/4;border:1px solid var(--line);border-radius:3px;
   background:var(--black);position:relative;overflow:hidden;
-  display:flex;align-items:center;justify-content:center;
-  color:var(--white-faint);font-family:var(--serif);font-size:11px;
-  letter-spacing:.22em;text-transform:uppercase;text-align:center;padding:16px;
 }
 .gal-slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
-.gal-slot video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .gal-slot:hover img{transform:scale(1.04)}
 
 /* ---------- Testimonial ---------- */
@@ -348,17 +348,41 @@ footer .fine{font-size:12.5px;letter-spacing:.12em;color:var(--white-faint);text
   <!-- HERO -->
   <section class="hero">
     <div class="wrap">
-      <svg class="palm" viewBox="0 0 64 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <g stroke="#C9A24B" stroke-width="1.6" stroke-linecap="round">
-          <path d="M32 78 C33 58 34 44 33 30"/>
-          <path d="M33 30 C24 26 14 27 7 33 C17 28 27 29 33 32"/>
-          <path d="M33 30 C42 26 52 27 59 33 C49 28 39 29 33 32"/>
-          <path d="M33 30 C27 22 18 18 9 19 C19 18 28 23 33 29"/>
-          <path d="M33 30 C39 22 48 18 57 19 C47 18 38 23 33 29"/>
-          <path d="M33 30 C31 21 32 12 37 5 C33 12 32 21 34 29"/>
-          <path d="M33 30 C33 21 30 12 24 6 C29 13 31 21 32 29"/>
-        </g>
-      </svg>
+      <svg class="palm" viewBox="418 306 972 1168" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="color:var(--gold)"><g transform="translate(0.000000,1800.000000) scale(0.100000,-0.100000)" fill="currentColor" stroke="none"><path d="M6580 14523 c-177 -10 -511 -62 -533 -82 -7 -7 146 -132 468 -379
+151 -116 162 -123 195 -117 37 7 183 40 370 85 115 28 144 29 138 5 -2 -7 -63
+-81 -136 -165 -74 -84 -130 -156 -125 -160 4 -4 53 -41 108 -83 55 -42 163
+-126 240 -186 77 -61 199 -156 271 -211 l131 -101 217 75 c268 92 284 91 197
+-18 -27 -33 -83 -107 -124 -163 -42 -55 -84 -104 -95 -107 -11 -4 -64 2 -119
+13 -89 18 -233 39 -386 56 -113 13 -508 7 -652 -10 -607 -70 -1195 -305 -1715
+-683 -173 -127 -456 -384 -444 -404 3 -4 223 -8 489 -8 l484 0 44 53 c274 322
+366 420 390 412 18 -8 19 -5 -13 -235 -10 -74 -20 -155 -22 -180 l-3 -45 590
+0 590 0 93 125 c265 357 260 355 237 59 -9 -112 -17 -204 -18 -205 -117 -73
+-377 -295 -512 -436 -476 -496 -757 -1038 -852 -1643 -33 -210 -18 -782 22
+-815 19 -16 676 656 670 684 -3 12 -12 80 -20 151 -63 542 -77 515 146 277 78
+-84 146 -151 150 -150 4 2 180 174 392 383 l384 381 -38 184 c-56 271 -65 330
+-48 340 19 13 31 3 187 -144 79 -75 148 -136 153 -136 4 0 64 53 131 118 203
+193 225 212 243 205 13 -4 15 -13 10 -37 -3 -17 -13 -78 -20 -136 -8 -58 -37
+-267 -64 -465 -146 -1058 -246 -2160 -311 -3405 -54 -1059 -90 -2119 -90
+-2706 0 -248 -2 -283 -16 -288 -9 -3 -304 -6 -657 -6 l-642 0 -50 -24 c-115
+-53 -156 -116 -163 -247 -7 -132 40 -216 151 -272 l54 -28 2399 1 2398 0 44
+22 c220 106 215 427 -8 527 -44 20 -63 21 -722 21 -372 0 -683 3 -692 6 -14 5
+-16 38 -16 268 0 428 -36 1769 -60 2236 -5 107 -12 247 -15 310 -18 367 -75
+1297 -100 1615 -26 333 -54 675 -70 850 -9 94 -20 220 -25 280 -16 171 -54
+538 -96 910 -14 127 -32 289 -39 360 -8 72 -17 148 -21 171 -13 89 21 68 281
+-174 66 -62 124 -112 128 -112 5 0 73 62 152 137 159 151 165 155 185 143 12
+-7 12 -22 -3 -97 -10 -48 -27 -133 -38 -188 -10 -55 -25 -131 -33 -170 l-14
+-70 168 -175 c93 -96 263 -269 379 -385 l211 -210 163 163 c120 119 168 161
+180 156 10 -3 17 -9 17 -13 0 -7 -40 -271 -70 -465 l-21 -139 323 -324 c178
+-178 331 -329 340 -334 27 -15 36 15 53 163 85 763 -175 1533 -732 2165 -170
+193 -387 391 -564 516 l-66 47 -7 77 c-3 43 -9 136 -13 206 -11 217 4 208 276
+-175 l62 -88 583 0 c320 0 585 2 587 5 5 5 4 17 -27 283 -18 160 -15 179 23
+165 16 -6 205 -218 318 -355 l79 -98 478 0 c264 0 479 4 482 9 3 5 -29 42 -72
+82 -870 830 -2003 1179 -3106 958 -82 -16 -102 -18 -117 -7 -25 17 -249 318
+-249 334 0 29 47 20 239 -46 111 -38 209 -70 218 -70 15 0 729 549 747 575 11
+15 3 25 -151 198 -157 175 -166 172 225 76 112 -28 209 -49 215 -46 7 2 143
+108 304 234 160 126 302 237 315 245 l23 16 -29 11 c-134 52 -558 90 -817 73
+-886 -60 -1652 -487 -2118 -1181 -83 -123 -87 -123 -161 -11 -244 369 -611
+695 -1005 892 -431 217 -945 328 -1395 301z"/></g></svg>
       <h1>The Soul Spot</h1>
       <p class="sub">Soul Food · Caribbean · Seafood</p>
       <div class="divider" aria-hidden="true"></div>
@@ -406,7 +430,7 @@ footer .fine{font-size:12.5px;letter-spacing:.12em;color:var(--white-faint);text
         <p><b>Aunt Kelly's influence became the foundation of The Soul Spot</b> and the inspiration behind our soul food offerings. The Caribbean side of our story comes from my husband, Richi, whose Jamaican roots bring bold island flavors and traditions to our menu.</p>
         <p>Together, we've blended Southern comfort and Caribbean culture into one table. Every meal is prepared with love, and every guest is treated like family. Dedicated to Aunt Kelly, whose kitchen started it all.</p>
       </div>
-      <div class="photo-slot reveal" id="story-photo">Photo: the owners in the kitchen<br>(swap in real photography)</div>
+      <div class="photo-slot reveal" id="story-photo"></div>
     </div>
   </section>
 
@@ -543,15 +567,41 @@ footer .fine{font-size:12.5px;letter-spacing:.12em;color:var(--white-faint);text
 </main>
 
 <footer>
-  <svg class="palm" viewBox="0 0 64 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <g stroke="#C9A24B" stroke-width="1.6" stroke-linecap="round">
-      <path d="M32 78 C33 58 34 44 33 30"/>
-      <path d="M33 30 C24 26 14 27 7 33 C17 28 27 29 33 32"/>
-      <path d="M33 30 C42 26 52 27 59 33 C49 28 39 29 33 32"/>
-      <path d="M33 30 C27 22 18 18 9 19 C19 18 28 23 33 29"/>
-      <path d="M33 30 C39 22 48 18 57 19 C47 18 38 23 33 29"/>
-    </g>
-  </svg>
+  <svg class="palm" viewBox="418 306 972 1168" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="color:var(--gold)"><g transform="translate(0.000000,1800.000000) scale(0.100000,-0.100000)" fill="currentColor" stroke="none"><path d="M6580 14523 c-177 -10 -511 -62 -533 -82 -7 -7 146 -132 468 -379
+151 -116 162 -123 195 -117 37 7 183 40 370 85 115 28 144 29 138 5 -2 -7 -63
+-81 -136 -165 -74 -84 -130 -156 -125 -160 4 -4 53 -41 108 -83 55 -42 163
+-126 240 -186 77 -61 199 -156 271 -211 l131 -101 217 75 c268 92 284 91 197
+-18 -27 -33 -83 -107 -124 -163 -42 -55 -84 -104 -95 -107 -11 -4 -64 2 -119
+13 -89 18 -233 39 -386 56 -113 13 -508 7 -652 -10 -607 -70 -1195 -305 -1715
+-683 -173 -127 -456 -384 -444 -404 3 -4 223 -8 489 -8 l484 0 44 53 c274 322
+366 420 390 412 18 -8 19 -5 -13 -235 -10 -74 -20 -155 -22 -180 l-3 -45 590
+0 590 0 93 125 c265 357 260 355 237 59 -9 -112 -17 -204 -18 -205 -117 -73
+-377 -295 -512 -436 -476 -496 -757 -1038 -852 -1643 -33 -210 -18 -782 22
+-815 19 -16 676 656 670 684 -3 12 -12 80 -20 151 -63 542 -77 515 146 277 78
+-84 146 -151 150 -150 4 2 180 174 392 383 l384 381 -38 184 c-56 271 -65 330
+-48 340 19 13 31 3 187 -144 79 -75 148 -136 153 -136 4 0 64 53 131 118 203
+193 225 212 243 205 13 -4 15 -13 10 -37 -3 -17 -13 -78 -20 -136 -8 -58 -37
+-267 -64 -465 -146 -1058 -246 -2160 -311 -3405 -54 -1059 -90 -2119 -90
+-2706 0 -248 -2 -283 -16 -288 -9 -3 -304 -6 -657 -6 l-642 0 -50 -24 c-115
+-53 -156 -116 -163 -247 -7 -132 40 -216 151 -272 l54 -28 2399 1 2398 0 44
+22 c220 106 215 427 -8 527 -44 20 -63 21 -722 21 -372 0 -683 3 -692 6 -14 5
+-16 38 -16 268 0 428 -36 1769 -60 2236 -5 107 -12 247 -15 310 -18 367 -75
+1297 -100 1615 -26 333 -54 675 -70 850 -9 94 -20 220 -25 280 -16 171 -54
+538 -96 910 -14 127 -32 289 -39 360 -8 72 -17 148 -21 171 -13 89 21 68 281
+-174 66 -62 124 -112 128 -112 5 0 73 62 152 137 159 151 165 155 185 143 12
+-7 12 -22 -3 -97 -10 -48 -27 -133 -38 -188 -10 -55 -25 -131 -33 -170 l-14
+-70 168 -175 c93 -96 263 -269 379 -385 l211 -210 163 163 c120 119 168 161
+180 156 10 -3 17 -9 17 -13 0 -7 -40 -271 -70 -465 l-21 -139 323 -324 c178
+-178 331 -329 340 -334 27 -15 36 15 53 163 85 763 -175 1533 -732 2165 -170
+193 -387 391 -564 516 l-66 47 -7 77 c-3 43 -9 136 -13 206 -11 217 4 208 276
+-175 l62 -88 583 0 c320 0 585 2 587 5 5 5 4 17 -27 283 -18 160 -15 179 23
+165 16 -6 205 -218 318 -355 l79 -98 478 0 c264 0 479 4 482 9 3 5 -29 42 -72
+82 -870 830 -2003 1179 -3106 958 -82 -16 -102 -18 -117 -7 -25 17 -249 318
+-249 334 0 29 47 20 239 -46 111 -38 209 -70 218 -70 15 0 729 549 747 575 11
+15 3 25 -151 198 -157 175 -166 172 225 76 112 -28 209 -49 215 -46 7 2 143
+108 304 234 160 126 302 237 315 245 l23 16 -29 11 c-134 52 -558 90 -817 73
+-886 -60 -1652 -487 -2118 -1181 -83 -123 -87 -123 -161 -11 -244 369 -611
+695 -1005 892 -431 217 -945 328 -1395 301z"/></g></svg>
   <p class="made">Made with Love. Served with Soul.</p>
   <div class="links">
     <a href="https://www.instagram.com/t.hesoulspot/" rel="noopener">Instagram</a>
@@ -682,47 +732,55 @@ function applySettings(s){
   if(set.story_photo){
     const slot = document.getElementById("story-photo");
     slot.textContent = "";
+    slot.style.display = "flex";
     const img = document.createElement("img");
     img.src = set.story_photo; img.alt = "The Soul Spot owners";
     slot.appendChild(img);
+  } else {
+    const sg = document.querySelector(".story-grid");
+    if(sg) sg.style.gridTemplateColumns = "1fr";
   }
   const gal = document.getElementById("gal-grid");
   gal.innerHTML = "";
-  // video tiles first — muted looping food clips, shown reel-style
+  const gallerySection = document.getElementById("gallery");
+  // videos as portrait reels in their native shape
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const videoLabels = {1:"Video: baked macaroni and cheese fresh from the oven", 2:"Video: jerk seafood served in a pineapple bowl"};
+  let reelRow = null, mediaCount = 0;
   for(let v=1; v<=2; v++){
     const vurl = set["video"+v];
     if(!vurl) continue;
+    if(!reelRow){
+      reelRow = document.createElement("div");
+      reelRow.className = "reel-row";
+      gal.parentNode.insertBefore(reelRow, gal);
+    }
     const slot = document.createElement("div");
-    slot.className = "gal-slot reveal";
+    slot.className = "reel reveal";
     const vid = document.createElement("video");
     vid.src = vurl;
     vid.muted = true; vid.loop = true;
     vid.playsInline = true; vid.setAttribute("playsinline","");
     vid.preload = "metadata";
     vid.setAttribute("aria-label", videoLabels[v] || "Video of our food");
-    if(reduceMotion){
-      vid.controls = true;   // user starts it themselves
-    } else {
-      vid.autoplay = true;
-    }
+    if(reduceMotion){ vid.controls = true; } else { vid.autoplay = true; }
     slot.appendChild(vid);
-    gal.appendChild(slot);
+    reelRow.appendChild(slot);
+    mediaCount++;
   }
+  // photos: only render slots that actually have an image
   for(let i=1;i<=6;i++){
     const url = set["gallery"+i];
+    if(!url) continue;
     const slot = document.createElement("div");
     slot.className = "gal-slot reveal";
-    if(url){
-      const img = document.createElement("img");
-      img.src = url; img.alt = "The Soul Spot — plate " + i; img.loading = "lazy";
-      slot.appendChild(img);
-    } else {
-      slot.textContent = "Photo " + i;
-    }
+    const img = document.createElement("img");
+    img.src = url; img.alt = "The Soul Spot — plate " + i; img.loading = "lazy";
+    slot.appendChild(img);
     gal.appendChild(slot);
+    mediaCount++;
   }
+  if(mediaCount === 0 && gallerySection){ gallerySection.style.display = "none"; }
   // testimonial video — click to play, never autoplays (it has sound)
   if(set.testimonial_video){
     const wrap = document.getElementById("testimonial-video-wrap");
