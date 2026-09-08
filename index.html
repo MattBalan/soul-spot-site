@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Soul Spot — Soul Food · Caribbean · Seafood | Raleigh, NC</title>
+<meta name="description" content="The Soul Spot — Black-owned soul food, Caribbean, and seafood in Raleigh, NC. Oxtails, rasta pasta, jerk salmon, signature lemonades. Catering + delivery available.">
+<!-- Social sharing preview -->
+<meta property="og:title" content="The Soul Spot — Raleigh, NC">
+<meta property="og:description" content="Good food. Real flavor. Soul Food · Caribbean · Seafood. Weekly menu + catering for any event.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta name="theme-color" content="#0F0E0C">
+<link rel="icon" type="image/png" href="soulspot-favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Marcellus&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- Local business schema: helps Google show The Soul Spot for "soul food raleigh" searches -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FoodEstablishment",
+  "name": "The Soul Spot",
+  "description": "Black-owned soul food, Caribbean, and seafood kitchen in Raleigh, NC. Weekly rotating menu and catering.",
+  "servesCuisine": ["Soul Food", "Caribbean", "Jamaican", "Seafood"],
+  "telephone": "+1-347-461-4663",
+  "email": "TheSoulSpot919@gmail.com",
+  "priceRange": "$$",
+  "address": { "@type": "PostalAddress", "addressLocality": "Raleigh", "addressRegion": "NC", "addressCountry": "US" },
+  "areaServed": "Raleigh-Durham, NC",
+  "sameAs": ["https://www.instagram.com/t.hesoulspot/"],
+  "slogan": "Made with Love. Served with Soul."
+}
+</script>
+<style>
+:root{
+  --black:#0F0E0C;
+  --char:#171512;
+  --char-2:#1E1B17;
+  /* palette sampled directly from the logo */
+  --gold:#F2CC34;                    /* logo yellow — primary CTA + emphasis */
+  --gold-bright:#F8DA63;             /* hover tint */
+  --gold-dim:rgba(242,204,52,.38);
+  --green:#4E9117;                   /* logo green — labels, structure, secondary */
+  --green-bright:#66B32A;            /* hover tint */
+  --green-deep:#225006;              /* fills, badges */
+  --white:#F4EFE6;
+  --white-dim:rgba(244,239,230,.68);
+  --white-faint:rgba(244,239,230,.55);
+  --line:rgba(78,145,23,.30);        /* hairlines now green-tinted */
+  --jam-yellow:#F2CC34;
+  --jam-green:#4E9117;
+  --jam-green-deep:#225006;
+  --script:"Great Vibes",cursive;
+  --serif:"Marcellus",Georgia,serif;
+  --sans:"Jost",-apple-system,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:var(--sans);
+  font-size:17px;font-weight:300;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+.eyebrow{
+  font-family:var(--serif);
+  font-size:12.5px;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--green);
+}
+
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+::selection{background:var(--green-deep);color:#fff}
+.skip-link{
+  position:absolute;left:-9999px;top:0;z-index:100;
+  background:var(--gold);color:var(--black);font-weight:500;
+  padding:12px 22px;border-radius:0 0 6px 0;text-decoration:none;
+}
+.skip-link:focus{left:0}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse at 20% -10%,rgba(78,145,23,.07),transparent 55%),
+             radial-gradient(ellipse at 90% 110%,rgba(78,145,23,.05),transparent 50%);
+}
+main,footer{position:relative;z-index:1}
+
+/* ---------- Announcement bar (sheet-driven; hidden when empty) ---------- */
+.topbar{position:sticky;top:0;z-index:50}
+.announce{
+  display:none;background:var(--green-deep);color:#fff;
+  font-family:var(--serif);font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+  align-items:center;gap:10px;padding:0 8px 0 0;
+  border-bottom:1px solid rgba(255,255,255,.14);
+}
+.announce.show{display:flex}
+.announce-track{
+  flex:1;min-width:0;overflow:hidden;
+  padding:10px 0 10px 18px;
+}
+.announce-inner{display:inline-block;white-space:nowrap}
+.announce.scroll .announce-inner{
+  animation:announce-marquee var(--marquee-time,18s) linear infinite;
+}
+.announce.scroll:hover .announce-inner{animation-play-state:paused}
+@keyframes announce-marquee{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+.announce-close{
+  flex:none;background:none;border:none;cursor:pointer;
+  color:#fff;opacity:.75;font-size:19px;line-height:1;
+  padding:8px 12px;border-radius:3px;transition:opacity .15s,background .15s;
+}
+.announce-close:hover{opacity:1;background:rgba(255,255,255,.12)}
+.announce-close:focus-visible{outline:2px solid #fff;outline-offset:-2px}
+@media (prefers-reduced-motion:reduce){
+  .announce.scroll .announce-inner{animation:none}
+  .announce.scroll .announce-dup{display:none}
+}
+
+/* ---------- Nav ---------- */
+
+
+
+
+
+header{
+  position:relative;
+  background:rgba(15,14,12,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{text-decoration:none;display:flex;align-items:baseline;gap:2px;line-height:1}
+.brand .the{font-family:var(--serif);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--white-faint);margin-right:6px}
+.brand .soul{font-family:var(--script);font-size:27px;line-height:1.3;color:var(--white)}
+.brand .spot{font-family:var(--serif);font-size:12px;letter-spacing:.42em;text-transform:uppercase;color:var(--green);margin-left:8px}
+
+
+
+.nav-links{display:flex;gap:30px;list-style:none;align-items:center}
+.nav-links a{
+  text-decoration:none;font-size:13.5px;font-weight:400;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--white-dim);transition:color .15s;
+}
+.nav-links a{position:relative;padding-bottom:6px}
+.nav-links a::after{content:"";position:absolute;bottom:0;left:0;width:100%;height:2px;background:var(--jam-green);transform:scaleX(0);transform-origin:left;transition:transform .2s}
+.nav-links a:hover{color:var(--gold-bright)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-links a.nav-cta::after{display:none}
+.nav-cta{
+  border:1px solid var(--green);color:var(--white)!important;
+  padding:9px 20px;border-radius:2px;
+}
+.nav-cta:hover{background:var(--green-deep);border-color:var(--green-bright);color:var(--white)!important}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:2px;color:var(--gold);padding:8px 14px;font-family:var(--serif);font-size:12px;letter-spacing:.2em;text-transform:uppercase;cursor:pointer}
+@media (max-width:820px){
+  .nav-links{
+    display:none;position:absolute;top:68px;left:0;right:0;
+    background:var(--black);flex-direction:column;
+    padding:24px;gap:20px;align-items:flex-start;
+    border-bottom:1px solid var(--line);
+  }
+  .nav-links.open{display:flex}
+  .menu-btn{display:block}
+}
+
+/* ---------- Hero ---------- */
+.hero{
+  padding:96px 0 84px;text-align:center;
+  border-bottom:1px solid var(--line);
+}
+.hero .palm{width:64px;height:auto;margin:0 auto 26px;opacity:.9}
+.hero-logo{max-width:min(490px,84vw);height:auto;margin:0 auto;display:block}
+.hero-logo:not([src]),.hero-logo[src=""]{display:none}
+
+
+.hero h1{
+  font-family:var(--script);font-weight:400;
+  font-size:clamp(44px,7vw,72px);
+  line-height:1.2;color:var(--white);
+}
+.hero .sub{
+  font-family:var(--serif);
+  font-size:clamp(12px,1.8vw,15px);letter-spacing:.44em;text-transform:uppercase;
+  color:var(--green);margin-top:14px;
+}
+.hero .divider{
+  width:150px;max-width:50%;height:1px;margin:26px auto;
+  background:var(--green);
+}
+.hero .tag{
+  font-size:14px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--white-dim);
+}
+.hero .tag b{color:var(--white);font-weight:500}
+.hero-actions{margin-top:36px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn{
+  display:inline-block;text-decoration:none;
+  font-family:var(--serif);font-size:13px;letter-spacing:.22em;text-transform:uppercase;
+  padding:15px 32px;border-radius:2px;transition:all .18s;
+}
+.btn-gold{background:var(--gold);color:var(--black)}
+.btn-gold:hover{background:var(--gold-bright)}
+.btn-line{border:1px solid var(--green);color:var(--white)}
+.btn-line:hover{border-color:var(--green-bright);color:var(--gold)}
+
+/* ---------- Sections ---------- */
+section{padding:88px 0}
+.sec-head{text-align:center;margin-bottom:52px}
+.sec-head .script-lead{font-family:var(--script);font-size:clamp(34px,5.4vw,52px);line-height:1.22;padding-top:.06em;color:var(--gold-bright)}
+
+.sec-head h2{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(15px,2.4vw,19px);letter-spacing:.4em;text-transform:uppercase;
+  margin-top:10px;color:var(--white);
+}
+.sec-head .note{font-size:14px;color:var(--white-faint);margin-top:16px;letter-spacing:.06em}
+
+/* ---------- Weekly menu ---------- */
+.menu-section{border-bottom:1px solid var(--line)}
+section{position:relative}
+
+.updated{
+  text-align:center;margin:-30px 0 40px;
+  font-family:var(--serif);font-size:12px;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--green);
+}
+.day-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px;max-width:820px;margin:0 auto}
+@media (max-width:880px){.day-grid{grid-template-columns:1fr;max-width:520px}}
+.day-card{
+  border:1px solid var(--line);border-radius:4px;
+  padding:38px 30px 32px;background:var(--black);
+  position:relative;transition:border-color .25s;
+  display:flex;flex-direction:column;justify-content:center;
+}
+.day-card:hover{border-color:var(--green)}
+
+.day-card .day-script{margin:0;
+  font-family:var(--script);font-size:38px;line-height:1.24;color:var(--gold-bright);
+  text-align:center;
+}
+.day-card .day-name{
+  font-family:var(--serif);font-size:13px;letter-spacing:.4em;text-transform:uppercase;
+  text-align:center;color:var(--white);margin:8px 0 6px;
+}
+.day-card .day-rule{
+  width:48px;height:2px;margin:16px auto 26px;display:flex;background:none;
+}
+.day-card .day-rule::before,.day-card .day-rule::after{content:"";flex:1;height:2px}
+.day-card .day-rule::before{background:var(--jam-green)}
+.day-card .day-rule::after{background:var(--jam-yellow)}
+.item{display:flex;align-items:baseline;gap:8px;margin-bottom:15px}
+.item:last-child{margin-bottom:0}
+.item .name{font-size:15.5px;font-weight:400;letter-spacing:.05em;text-transform:uppercase}
+.item .lead{flex:1;min-width:20px;border-bottom:1px dotted var(--gold-dim);transform:translateY(-4px)}
+.item .price{font-family:var(--serif);font-size:16px;color:var(--jam-yellow);white-space:nowrap}
+.sides-panel{
+  margin-top:26px;border:1px solid var(--line);border-radius:3px;
+  padding:30px 34px;background:var(--black);text-align:center;
+}
+.sides-panel h3{
+  font-family:var(--serif);font-size:14px;letter-spacing:.4em;text-transform:uppercase;
+  color:var(--green);margin-bottom:18px;
+}
+.sides-list{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px}
+.sides-list .side{font-size:14.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--white-dim)}
+.sides-list .side b{color:var(--jam-yellow);font-weight:500;font-family:var(--serif)}
+#daily-special{
+  display:none;max-width:560px;margin:30px auto 0;
+  border:1px solid var(--line);border-radius:4px;padding:24px 28px;text-align:center;
+}
+#daily-special .ds-title{
+  font-family:var(--script);font-size:30px;line-height:1.3;color:var(--gold);
+}
+#daily-special .ds-text{
+  font-family:var(--serif);font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--white-dim);margin-top:8px;line-height:1.7;
+}
+section[id]{scroll-margin-top:88px}
+.cat-grid-menu{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px;max-width:1000px;margin:0 auto}
+@media (max-width:880px){section[id]{scroll-margin-top:88px}
+.cat-grid-menu{grid-template-columns:1fr;max-width:520px}}
+.cat-cols{
+  display:flex;justify-content:flex-end;gap:0;margin:-6px 0 14px;
+  font-family:var(--serif);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--green);
+}
+.cat-cols span{width:62px;text-align:right}
+.cat-item{display:flex;align-items:baseline;gap:8px;margin-bottom:15px}
+.cat-item:last-child{margin-bottom:0}
+.cat-item .name{font-size:14.5px;font-weight:400;letter-spacing:.03em;text-transform:uppercase;min-width:0}
+.cat-item .name small{display:block;font-size:11.5px;letter-spacing:.04em;text-transform:none;color:var(--white-faint);margin-top:2px}
+.cat-item .lead{flex:1;min-width:16px;border-bottom:1px dotted var(--gold-dim);transform:translateY(-4px)}
+.cat-item .p{width:62px;text-align:right;font-family:var(--serif);font-size:16px;color:var(--gold);white-space:nowrap}
+.cat-item .crown{color:var(--gold);margin-right:6px}
+.cat-menu-top{
+  display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;
+  margin:-18px auto 30px;padding:12px 20px;max-width:560px;
+  border:1px solid var(--line);border-radius:4px;
+}
+.cat-menu-top span{
+  font-family:var(--serif);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--white-dim);
+}
+.btn-sm{
+  display:inline-block;text-decoration:none;
+  font-family:var(--serif);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;
+  padding:9px 20px;border-radius:2px;transition:all .18s;
+  background:var(--gold);color:var(--black);white-space:nowrap;
+}
+.btn-sm:hover{background:var(--gold-bright)}
+@media (max-width:520px){
+  .cat-menu-top{gap:10px;padding:14px 16px}
+  .cat-menu-top span{font-size:11px}
+}
+.cat-menu-cta{
+  text-align:center;margin-top:6px;padding-top:30px;border-top:1px solid var(--line);
+}
+.cat-menu-cta p{
+  font-family:var(--serif);font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--white-dim);margin-bottom:18px;
+}
+.cat-menu-cta .btn{margin:0 6px 10px}
+.menu-foot{text-align:center;margin-top:34px;font-size:14px;color:var(--white-faint)}
+.menu-foot a{color:var(--gold-bright);text-decoration:none}
+.menu-foot a:hover{text-decoration:underline}
+
+/* ---------- Order strip ---------- */
+.order-strip{border-bottom:1px solid var(--line);padding:34px 0;text-align:center}
+.order-strip .wrap{display:flex;align-items:center;justify-content:center;gap:14px 34px;flex-wrap:wrap}
+.order-strip span{font-family:var(--serif);font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--white-dim)}
+.order-strip .diamond{color:var(--green);font-size:10px}
+.order-strip a{color:var(--gold-bright);text-decoration:none}
+
+/* ---------- Story ---------- */
+.story{border-bottom:1px solid var(--line);background:var(--char)}
+.story-grid > div:first-child{border-left:3px solid var(--jam-green);padding-left:26px}
+@media (max-width:820px){.story-grid > div:first-child{padding-left:20px}}
+.story-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:start}
+@media (max-width:820px){.story-grid{grid-template-columns:1fr}}
+.story p{color:var(--white-dim);margin-bottom:18px;max-width:54ch}
+.story p b{color:var(--white);font-weight:500}
+.story .quote{
+  font-family:var(--script);font-size:clamp(27px,3.6vw,36px);line-height:1.38;
+  color:var(--gold-bright);margin:26px 0;
+}
+.photo-slot{
+  aspect-ratio:4/5;border:1px solid var(--line);border-radius:3px;
+  display:none;align-items:center;justify-content:center;position:relative;
+  background:var(--char-2);overflow:hidden;
+}
+.photo-slot::before{content:"";position:absolute;inset:9px;border:1px solid rgba(78,145,23,.16);border-radius:2px;pointer-events:none;z-index:2}
+.photo-slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* ---------- Gallery ---------- */
+.gallery{border-bottom:1px solid var(--line);background:var(--char)}
+
+
+
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:720px){.gal-grid{grid-template-columns:repeat(2,1fr)}}
+.gal-slot{
+  aspect-ratio:3/4;border:1px solid var(--line);border-radius:3px;
+  background:var(--black);position:relative;overflow:hidden;
+}
+.gal-slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.gal-slot video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.gal-slot:hover img{transform:scale(1.04)}
+
+/* ---------- Testimonial ---------- */
+.testimonial{border-bottom:1px solid var(--line);text-align:center}
+.testimonial .quote-mark{font-family:var(--script);font-size:72px;line-height:.4;color:var(--jam-green);display:block;margin-bottom:26px}
+.testimonial blockquote{
+  font-family:var(--serif);font-size:clamp(22px,3.4vw,30px);line-height:1.4;
+  max-width:26ch;margin:0 auto;color:var(--white);
+}
+.testimonial cite{
+  display:block;margin-top:24px;font-style:normal;font-family:var(--sans);
+  font-size:13px;letter-spacing:.26em;text-transform:uppercase;color:var(--jam-yellow);
+}
+
+/* ---------- Catering ---------- */
+.catering{border-bottom:1px solid var(--line)}
+.cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+@media (max-width:820px){.cat-grid{grid-template-columns:1fr}}
+.cat-info p{color:var(--white-dim);margin-bottom:20px;max-width:46ch}
+.cat-list{list-style:none;margin:26px 0}
+.cat-list li{
+  font-size:14.5px;letter-spacing:.1em;text-transform:uppercase;
+  padding:13px 0;border-bottom:1px dotted var(--gold-dim);color:var(--white);
+}
+.cat-list li::before{content:"◆";color:var(--green);font-size:9px;margin-right:14px;vertical-align:2px}
+.form label{
+  display:block;font-family:var(--serif);font-size:11.5px;letter-spacing:.26em;
+  text-transform:uppercase;color:var(--green);margin:20px 0 8px;
+}
+.form input,.form select,.form textarea{
+  width:100%;background:var(--black);border:1px solid var(--line);
+  border-radius:2px;padding:13px 15px;color:var(--white);
+  font-family:var(--sans);font-size:15px;font-weight:300;
+}
+.form input:focus,.form select:focus,.form textarea:focus{border-color:var(--gold);outline:none}
+.form select option{background:var(--black)}
+.form textarea{min-height:110px;resize:vertical}
+.form .btn{margin-top:28px;border:none;cursor:pointer;width:100%}
+.form-note{font-size:13px;color:var(--white-faint);margin-top:14px;text-align:center}
+.tag-jam{
+  display:inline-block;font-size:10.5px;font-weight:500;letter-spacing:.1em;
+  text-transform:uppercase;padding:5px 13px;border-radius:999px;margin-left:8px;
+  vertical-align:2px;font-family:var(--sans);
+}
+.tag-jam.green{background:var(--jam-green-deep);color:#fff}
+.tag-jam.yellow{background:var(--jam-yellow);color:var(--black)}
+.tag-jam.outline{border:1px solid var(--jam-green);color:var(--jam-green)}
+.hidden{display:none}
+
+/* ---------- Contact / footer ---------- */
+.contact-strip{padding:56px 0;text-align:center;border-bottom:1px solid var(--line)}
+.contact-strip .wrap{display:flex;justify-content:center;gap:20px 56px;flex-wrap:wrap}
+.contact-item .k{font-family:var(--serif);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--green);display:block;margin-bottom:6px}
+.contact-item .v{font-size:16px;letter-spacing:.04em}
+.contact-item a{color:var(--white);text-decoration:none}
+.contact-item a:hover{color:var(--gold-bright)}
+footer{padding:52px 0 40px;text-align:center}
+footer .palm{width:40px;margin:0 auto 18px;opacity:.7}
+footer .made{font-family:var(--script);font-size:28px;line-height:1.35;color:var(--white);margin-bottom:8px}
+footer .links{margin:18px 0 26px}
+footer .links a{
+  font-family:var(--serif);font-size:12px;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--white-dim);text-decoration:none;margin:0 16px;
+}
+footer .links a:hover{color:var(--gold-bright)}
+footer .fine{font-size:12.5px;letter-spacing:.12em;color:var(--white-faint);text-transform:uppercase}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .65s ease,transform .65s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<a href="#top" class="skip-link">Skip to main content</a>
+
+
+<div class="topbar">
+<div class="announce" id="announce" role="status">
+  <div class="announce-track"><span class="announce-inner" id="announce-text"></span></div>
+  <button class="announce-close" id="announce-close" type="button" aria-label="Dismiss announcement">&times;</button>
+</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="The Soul Spot home">
+      <span class="the">The</span><span class="soul">Soul</span><span class="spot">Spot</span>
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="navlinks" onclick="toggleNav(this)">Menu</button>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="#story">Our Story</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a class="nav-cta" href="#catering">Book Catering</a></li>
+    </ul>
+  </div>
+</header>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <h1 style="margin:0"><img class="hero-logo" src="soulspot-logo.png" alt="The Soul Spot" width="612" height="387" fetchpriority="high"></h1>
+      <p class="sub">Soul Food &middot; Caribbean Flavor</p>
+      <div class="divider" aria-hidden="true"></div>
+      <p class="tag"><b>Good food. Real flavor.</b> — Raleigh, North Carolina</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#menu">Daily Menu</a>
+        <a class="btn btn-line" id="hero-catering-btn" href="#catering">Book Catering</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDER STRIP -->
+  <div class="order-strip">
+    <div class="wrap">
+      <span>Order by DM <a href="https://www.instagram.com/t.hesoulspot/" rel="noopener">@t.hesoulspot</a></span>
+      <span class="diamond" aria-hidden="true">◆</span>
+      <span id="order-note">Deliveries Available</span>
+
+    </div>
+  </div>
+
+  <!-- STORY -->
+  <section class="story" id="story">
+    <div class="wrap story-grid">
+      <div class="reveal">
+        <h2 class="eyebrow">Our Story</h2>
+        <p class="quote">"Every dish is a tribute to the lessons she taught me."</p>
+        <p>My passion for cooking began in my Aunt Kelly's kitchen. Growing up, I spent countless Sundays at her home surrounded by family, laughter, and incredible Southern cooking. Watching her cook taught me more than recipes. It taught me the importance of hospitality, tradition, and feeding people with love.</p>
+        <p><b>Aunt Kelly's influence became the foundation of The Soul Spot</b> and the inspiration behind our soul food offerings. The Caribbean side of our story comes from my husband, Richi, whose Jamaican roots bring bold island flavors and traditions to our menu.</p>
+        <p>Together, we've blended Southern comfort and Caribbean culture into one table. Every meal is prepared with love, and every guest is treated like family. Dedicated to Aunt Kelly, whose kitchen started it all.</p>
+      </div>
+      <div class="photo-slot reveal" id="story-photo"></div>
+    </div>
+  </section>
+
+  <!-- WEEKLY MENU -->
+  <section class="menu-section" id="menu">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="script-lead">Daily Menu</p>
+        <h2>Served Daily</h2>
+      </div>
+      <p class="updated" id="menu-updated"></p>
+      <div class="day-grid" id="day-grid"><!-- rendered from menu data --></div>
+      <div class="sides-panel reveal" id="sides-panel"><!-- rendered from menu data --></div>
+      <div id="daily-special" class="reveal">
+        <p class="ds-title">Daily Specials</p>
+        <p class="ds-text" id="daily-special-text"></p>
+      </div>
+      <p class="menu-foot">Ready to order? <a href="https://www.instagram.com/t.hesoulspot/" rel="noopener">Send us a DM</a> — please come hungry.</p>
+    </div>
+  </section>
+
+  <!-- CATERING MENU (appears once a file is added in Settings) -->
+  <section id="catering-menu" style="display:none;border-bottom:1px solid var(--line);background:var(--char)">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="script-lead">Catering Menu</p>
+        <h2>What We Bring To Your Event</h2>
+      </div>
+      <div class="cat-menu-top reveal">
+        <span>Already know what you want?</span>
+        <a class="btn-sm" href="#catering">Book Us</a>
+      </div>
+      <div id="catering-menu-body" style="margin:0 auto;text-align:center"></div>
+    </div>
+  </section>
+
+  <!-- CATERING -->
+  <section class="catering" id="catering">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="script-lead">Book Us</p>
+        <h2>Request A Quote</h2>
+      </div>
+      <div class="cat-grid">
+        <div class="cat-info reveal">
+          <p>From backyard cookouts to weddings, office lunches to family reunions — we bring the full Soul Spot experience to your event, made fresh and served with soul.</p>
+          <ul class="cat-list">
+            <li>Weddings &amp; celebrations</li>
+            <li>Corporate &amp; office events</li>
+            <li>Family reunions &amp; cookouts</li>
+            <li>Drop-off trays or full service</li>
+          </ul>
+
+        </div>
+        <!-- Netlify Forms: works automatically once deployed on Netlify.
+             Set the notification email in Netlify → Forms → Notifications. -->
+        <form class="form reveal" name="catering-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
+          <input type="hidden" name="form-name" value="catering-inquiry">
+          <input type="hidden" name="subject" value="New catering inquiry from thesoulspot.co">
+          <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
+          <label for="f-name">Your name</label>
+          <input id="f-name" type="text" name="name" required autocomplete="name">
+          <label for="f-contact">Email or phone</label>
+          <input id="f-contact" type="text" name="contact" required>
+          <label for="f-type">Event type</label>
+          <select id="f-type" name="event-type">
+            <option>Wedding / celebration</option>
+            <option>Corporate / office</option>
+            <option>Reunion / cookout</option>
+            <option>Something else</option>
+          </select>
+          <label for="f-details">Date &amp; guest count</label>
+          <input id="f-details" type="text" name="details" placeholder="e.g. Sept 20, about 50 people">
+          <label for="f-msg">What are you craving?</label>
+          <textarea id="f-msg" name="message" placeholder="Oxtails? Rasta pasta? Fish fry? Tell us everything."></textarea>
+          <button class="btn btn-gold" type="submit" id="submit-btn">Send Catering Inquiry</button>
+          <p class="form-note" id="form-note">We usually reply within a day or two.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="script-lead">From the Kitchen</p>
+        <h2>Gallery</h2>
+      </div>
+      <div class="gal-grid" id="gal-grid"><!-- rendered from settings --></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="testimonial">
+    <div class="wrap reveal">
+      <span class="quote-mark" aria-hidden="true">"</span>
+      <blockquote id="testimonial-text">The pasta is criminally delicious! I had such a great time.</blockquote>
+      <cite id="testimonial-name">— A very happy customer</cite>
+      <div id="testimonial-video-wrap" style="display:none;margin-top:40px">
+        <video id="testimonial-video" controls preload="metadata" playsinline
+               style="max-width:340px;width:100%;border:1px solid var(--line);border-radius:12px;background:#000"></video>
+        <p style="margin-top:12px;font-family:var(--serif);font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)">Hear it from our customers</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <div class="contact-strip">
+    <div class="wrap">
+      <div class="contact-item">
+        <span class="k">Instagram</span>
+        <span class="v"><a href="https://www.instagram.com/t.hesoulspot/" rel="noopener">@t.hesoulspot</a></span>
+      </div>
+      <div class="contact-item" id="phone-item" style="display:none">
+        <span class="k">Call / Text</span>
+        <span class="v"><a id="phone-link" href="#" aria-label="Phone number">&nbsp;</a></span>
+      </div>
+      <div class="contact-item" id="email-item" style="display:none">
+        <span class="k">Email</span>
+        <span class="v"><a id="email-link" href="#" aria-label="Email address">&nbsp;</a></span>
+      </div>
+      <div class="contact-item" id="hours-item" style="display:none">
+        <span class="k">Hours</span>
+        <span class="v" id="hours-text"></span>
+      </div>
+      <div class="contact-item">
+        <span class="k">Serving</span>
+        <span class="v">Raleigh &amp; the Triangle, NC</span>
+      </div>
+    </div>
+  </div>
+
+
+</main>
+
+<footer>
+  <img src="soulspot-logo.png" alt="" style="width:118px;height:auto;margin:0 auto 12px;display:block;opacity:.95" aria-hidden="true">
+  <p class="made">Made with Love. Served with Soul.</p>
+  <div class="links">
+    <a href="https://www.instagram.com/t.hesoulspot/" rel="noopener">Instagram</a>
+    <a href="#menu">Menu</a>
+    <a href="#catering">Catering</a>
+    <a href="#privacy">Privacy</a>
+  </div>
+  <p class="fine">© <span id="year"></span> The Soul Spot · Black-Owned · Raleigh, NC</p>
+  <div class="wrap" id="privacy" style="margin-top:24px"><details>
+        <summary style="cursor:pointer;font-family:var(--serif);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--white-faint);padding:6px 0;list-style:none">Privacy Policy</summary>
+        <div style="margin-top:18px;text-align:left;max-width:680px;margin-left:auto;margin-right:auto;font-size:15px;color:var(--white-dim);line-height:1.75">
+          <p style="margin-bottom:14px"><strong style="color:var(--white)">Effective date: September 1, 2026</strong></p>
+          <p style="margin-bottom:14px">The Soul Spot ("we," "us") operates this website to share our menu and take catering inquiries. We keep things simple, and that includes how we handle your information.</p>
+
+          <p style="margin-bottom:6px;color:var(--white)"><strong>What we collect</strong></p>
+          <p style="margin-bottom:14px">The only personal information we collect is what you choose to send us through the catering inquiry form: your name, your email or phone number, and the details of your event. We do not collect anything else. We do not use advertising trackers or analytics tools, and we do not use cookies.</p>
+
+          <p style="margin-bottom:6px;color:var(--white)"><strong>Storage on your device</strong></p>
+          <p style="margin-bottom:14px">If you dismiss an announcement banner at the top of the page, your browser remembers that choice locally so the same message does not reappear. This is stored only on your own device, contains no personal information, is never sent to us, and can be cleared at any time through your browser settings.</p>
+
+          <p style="margin-bottom:6px;color:var(--white)"><strong>How we use it</strong></p>
+          <p style="margin-bottom:14px">Inquiry information is used for one purpose: responding to you about your event. We do not sell, rent, or share your information with anyone for marketing.</p>
+
+          <p style="margin-bottom:6px;color:var(--white)"><strong>Who processes it</strong></p>
+          <p style="margin-bottom:14px">Form submissions are processed by Netlify, the service that hosts this website, and delivered to our email. Netlify may keep standard technical logs (such as IP addresses) as part of operating its hosting service. When the page loads, your browser also requests files from Google (for fonts, and for the published menu information we keep in Google Sheets) and from GitHub (for images and video). Those companies receive standard technical information such as your IP address as part of serving those files. Each provider has its own privacy policy governing that data.</p>
+
+          <p style="margin-bottom:6px;color:var(--white)"><strong>How long we keep it</strong></p>
+          <p style="margin-bottom:14px">We keep inquiry details as long as needed to handle your event and our business records, and we delete them on request.</p>
+
+          <p style="margin-bottom:6px;color:var(--white)"><strong>Your choices</strong></p>
+          <p style="margin-bottom:14px">You can ask us at any time to see, correct, or delete the information you sent us. Email <a href="mailto:TheSoulSpot919@gmail.com" style="color:var(--gold-bright)">TheSoulSpot919@gmail.com</a> and we will take care of it.</p>
+
+          <p style="margin-bottom:6px;color:var(--white)"><strong>Children</strong></p>
+          <p style="margin-bottom:14px">This site is not directed at children under 13, and we do not knowingly collect information from them.</p>
+
+          <p style="margin-bottom:6px;color:var(--white)"><strong>Changes</strong></p>
+          <p>If this policy changes, we will update this page and the effective date above.</p>
+        </div>
+      </details></div>
+</footer>
+
+<script>
+/* ============================================================
+   THE SOUL SPOT — SITE CONFIG
+   ------------------------------------------------------------
+   The owners edit the site through ONE Google Sheet with two
+   tabs, each published to the web as CSV:
+
+     Tab 1 "Menu"     columns: section,script,name,price,updated
+     Tab 2 "Settings" columns: key,value
+
+   Paste each tab's published-CSV link below. While these are
+   blank, the site uses the DEFAULTS built in further down —
+   so the site never looks broken, even if the sheet is down.
+   Full setup steps are in SETUP-GUIDE.md.
+   ============================================================ */
+const MENU_CSV     = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQdbyl9SetsmzDotpCF-XK4rAvO5Vjc-olLZ1q2NlE6ToChyIwE1xMKRwmuv0NznJi4V2f98nOe1v2f/pub?gid=323325902&single=true&output=csv";  // published CSV link for the "Menu" tab
+const SETTINGS_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQdbyl9SetsmzDotpCF-XK4rAvO5Vjc-olLZ1q2NlE6ToChyIwE1xMKRwmuv0NznJi4V2f98nOe1v2f/pub?gid=1807699220&single=true&output=csv";  // published CSV link for the "Settings" tab
+const CATERING_CSV = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQdbyl9SetsmzDotpCF-XK4rAvO5Vjc-olLZ1q2NlE6ToChyIwE1xMKRwmuv0NznJi4V2f98nOe1v2f/pub?gid=1323112463&single=true&output=csv";  // published CSV link for the "Catering" tab
+
+/* ---------------- Defaults (used when sheet not linked) ---------------- */
+const DEFAULT_MENU = {
+  updated: "Week of June 30",
+  days: [
+    { script:"Rasta Pasta", name:"Thursdays", items:[
+      { name:"Plain", price:"$15" },
+      { name:"Shrimp or Chicken", price:"$23" }
+    ]},
+    { script:"Fish Fry", name:"Fridays", items:[
+      { name:"Salmon Bites", price:"$23" },
+      { name:"Flounder", price:"$20" },
+      { name:"Whiting", price:"$20" }
+    ]},
+    { script:"Soul Food", name:"Saturdays", items:[
+      { name:"Brown Stew Chicken", price:"$25" },
+      { name:"Oxtails", price:"$30" }
+    ]}
+  ],
+  sides: [
+    { name:"Cabbage" }, { name:"Yams" }, { name:"Mac Salad" },
+    { name:"Rice & Peas" }, { name:"Baked Mac", price:"$5" },
+    { name:"Jerk Lobster/Crab Mac", price:"$10" }
+  ]
+};
+
+/* Settings keys the sheet can override:
+   announcement, phone, email, hours, order_note,
+   testimonial, testimonial_name, testimonial_video (mp4 URL),
+   story_photo (image URL), gallery1 … gallery6 (image URLs),
+   video1, video2 (mp4 URLs — short muted looping food clips in the gallery) */
+const DEFAULT_SETTINGS = {
+  announcement: "",
+  phone: "",
+  email: "",
+  hours: "",
+  order_note: "Deliveries Available",
+  testimonial: "The pasta is criminally delicious! I had such a great time.",
+  testimonial_name: "— A very happy customer",
+  testimonial_video: "",
+  daily_special: "Please call to see what's on today's menu.",
+  catering_menu_image: "",
+  catering_menu_pdf: "",
+  story_photo: "",
+  gallery1:"", gallery2:"", gallery3:"", gallery4:"", gallery5:"", gallery6:"",
+  video1:"", video2:""
+};
+
+const CATERING_DATA = { groups: [] };
+
+/* ---------------- Rendering ---------------- */
+function esc(s){ const d=document.createElement("div"); d.textContent=s||""; return d.innerHTML; }
+/* Menu names support optional tags: "Oxtails [green:Jamaican Classic]" */
+function tagify(s){
+  s = s || "";
+  const m = s.match(/^(.*?)\s*\[(green|yellow|outline):([^\]]+)\]\s*$/i);
+  if(!m) return esc(s);
+  return esc(m[1]) + '<span class="tag-jam ' + m[2].toLowerCase() + '">' + esc(m[3]) + '</span>';
+}
+
+function renderMenu(data){
+  document.getElementById("menu-updated").textContent = data.updated || "";
+  const grid = document.getElementById("day-grid");
+  grid.innerHTML = "";
+  data.days.forEach(day=>{
+    const card = document.createElement("div");
+    card.className = "day-card reveal";
+    card.innerHTML =
+      '<p class="day-script">'+esc(day.script)+'</p>'+
+      (day.name && day.name.trim().toLowerCase() !== (day.script||"").trim().toLowerCase()
+        ? '<p class="day-name">'+esc(day.name)+'</p>' : '')+
+      '<div class="day-rule"></div>'+
+      day.items.map(it=>
+        '<div class="item"><span class="name">'+tagify(it.name)+'</span><span class="lead"></span><span class="price">'+esc(it.price)+'</span></div>'
+      ).join("");
+    grid.appendChild(card);
+  });
+  const sp = document.getElementById("sides-panel");
+  sp.style.display = data.sides.length ? "" : "none";
+  sp.innerHTML =
+    "<h3>Sides</h3>"+
+    '<div class="sides-list">'+
+    data.sides.map(s=>
+      '<span class="side">'+esc(s.name)+(s.price? ' <b>'+esc(s.price)+'</b>':'')+"</span>"
+    ).join("")+
+    "</div>";
+  observeReveals();
+}
+
+function applySettings(s){
+  const set = Object.assign({}, DEFAULT_SETTINGS, s);
+  if(set.announcement){
+    const a = document.getElementById("announce");
+    const txt = document.getElementById("announce-text");
+    // key the dismissal to the message, so a NEW announcement always shows again
+    let key = "ss-dismissed-";
+    for(let i=0,hsh=0;i<set.announcement.length;i++){
+      hsh = ((hsh<<5)-hsh+set.announcement.charCodeAt(i))|0;
+      key = "ss-dismissed-"+hsh;
+    }
+    let dismissed = false;
+    try{ dismissed = localStorage.getItem(key) === "1"; }catch(e){}
+    if(!dismissed){
+      txt.textContent = set.announcement;
+      a.classList.add("show");
+      // if the message is wider than the bar, scroll it
+      requestAnimationFrame(()=>{
+        const track = a.querySelector(".announce-track");
+        if(txt.scrollWidth > track.clientWidth){
+          a.classList.add("scroll");
+          // two copies side by side so the loop is seamless and text shows immediately
+          txt.textContent = "";
+          const first = document.createElement("span");
+          first.textContent = set.announcement;
+          first.style.paddingRight = "70px";
+          const dup = first.cloneNode(true);
+          dup.className = "announce-dup";
+          dup.setAttribute("aria-hidden","true");
+          txt.append(first, dup);
+          const secs = Math.max(10, Math.round(first.offsetWidth/80));
+          a.style.setProperty("--marquee-time", secs + "s");
+        }
+      });
+      document.getElementById("announce-close").addEventListener("click", ()=>{
+        a.classList.remove("show","scroll");
+        try{ localStorage.setItem(key,"1"); }catch(e){}
+      });
+    }
+  }
+  if(set.daily_special){
+    document.getElementById("daily-special").style.display = "block";
+    document.getElementById("daily-special-text").textContent = set.daily_special;
+  }
+  if(CATERING_DATA.groups.length){
+    const sec = document.getElementById("catering-menu");
+    const body = document.getElementById("catering-menu-body");
+    sec.style.display = "";
+    body.style.textAlign = "left";
+    body.innerHTML = '<div class="cat-grid-menu">' + CATERING_DATA.groups.map(g =>
+      '<div class="day-card reveal in">' +
+        '<h3 class="day-script">' + esc(g.name) + '</h3>' +
+        '<div class="day-rule"></div>' +
+        '<div class="cat-cols" aria-hidden="true"><span>Half</span><span>Full</span></div>' +
+        g.items.map(it =>
+          '<div class="cat-item">' +
+            '<span class="name">' + (it.star ? '<span class="crown" aria-hidden="true">&#9733;</span>' : '') + esc(it.name) +
+              (it.note ? '<small>' + esc(it.note) + '</small>' : '') + '</span>' +
+            '<span class="lead"></span>' +
+            '<span class="p" aria-label="Half pan ' + esc(it.half) + '">' + esc(it.half) + '</span>' +
+            '<span class="p" aria-label="Full pan ' + esc(it.full) + '">' + esc(it.full) + '</span>' +
+          '</div>'
+        ).join("") +
+      '</div>'
+    ).join("") + '</div>';
+    if(set.catering_menu_pdf){
+      const cta = document.createElement("div");
+      cta.className = "cat-menu-cta";
+      const a2 = document.createElement("a");
+      a2.href = set.catering_menu_pdf; a2.target="_blank"; a2.rel="noopener";
+      a2.className = "btn btn-line";
+      a2.textContent = "Download Menu";
+      cta.appendChild(a2);
+      body.appendChild(cta);
+    }
+
+    // now that the menu exists, point the main CTAs at prices first
+    document.querySelectorAll('a.nav-cta[href="#catering"], a.btn[href="#catering"]').forEach(a=>{
+      if(!a.closest("#catering-menu")) a.setAttribute("href", "#catering-menu");
+    });
+    const hb = document.getElementById("hero-catering-btn");
+    if(hb) hb.textContent = "Catering Menu";
+  } else if(set.catering_menu_image || set.catering_menu_pdf){
+    const sec = document.getElementById("catering-menu");
+    const body = document.getElementById("catering-menu-body");
+    sec.style.display = "";
+    body.innerHTML = "";
+    if(set.catering_menu_image){
+      const img = document.createElement("img");
+      img.src = set.catering_menu_image;
+      img.alt = "The Soul Spot catering menu";
+      img.loading = "lazy";
+      img.style.cssText = "width:100%;height:auto;border:1px solid var(--line);border-radius:4px";
+      body.appendChild(img);
+    }
+    if(set.catering_menu_pdf){
+      const cta2 = document.createElement("div");
+      cta2.className = "cat-menu-cta";
+      const a2 = document.createElement("a");
+      a2.href = set.catering_menu_pdf; a2.target="_blank"; a2.rel="noopener";
+      a2.className = "btn btn-line"; a2.textContent = "Download Menu";
+      cta2.appendChild(a2);
+      body.appendChild(cta2);
+    }
+    document.querySelectorAll('a.nav-cta[href="#catering"], a.btn[href="#catering"]').forEach(a=>{
+      if(!a.closest("#catering-menu")) a.setAttribute("href", "#catering-menu");
+    });
+    const hb = document.getElementById("hero-catering-btn");
+    if(hb) hb.textContent = "Catering Menu";
+  }
+  if(set.order_note) document.getElementById("order-note").textContent = set.order_note;
+  if(set.testimonial) document.getElementById("testimonial-text").textContent = set.testimonial;
+  if(set.testimonial_name) document.getElementById("testimonial-name").textContent = set.testimonial_name;
+  if(set.phone){
+    document.getElementById("phone-item").style.display = "";
+    const p = document.getElementById("phone-link");
+    p.textContent = set.phone;
+    p.href = "tel:" + set.phone.replace(/[^\d+]/g,"");
+  }
+  if(set.hours){
+    document.getElementById("hours-item").style.display = "";
+    document.getElementById("hours-text").textContent = set.hours;
+  }
+  if(set.email){
+    document.getElementById("email-item").style.display = "";
+    const e = document.getElementById("email-link");
+    e.textContent = set.email;
+    e.href = "mailto:" + set.email;
+  }
+  if(set.story_photo){
+    const slot = document.getElementById("story-photo");
+    slot.textContent = "";
+    slot.style.display = "flex";
+    const img = document.createElement("img");
+    img.src = set.story_photo; img.alt = "The Soul Spot owners";
+    slot.appendChild(img);
+  } else {
+    const sg = document.querySelector(".story-grid");
+    if(sg) sg.style.gridTemplateColumns = "1fr";
+  }
+  const gal = document.getElementById("gal-grid");
+  gal.innerHTML = "";
+  const gallerySection = document.getElementById("gallery");
+  // videos as portrait reels in their native shape
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const videoLabels = {1:"Video: baked macaroni and cheese fresh from the oven", 2:"Video: jerk seafood served in a pineapple bowl"};
+  let mediaCount = 0;
+  for(let v=1; v<=2; v++){
+    const vurl = set["video"+v];
+    if(!vurl) continue;
+    const slot = document.createElement("div");
+    slot.className = "gal-slot reveal";
+    const vid = document.createElement("video");
+    vid.src = vurl;
+    vid.muted = true; vid.loop = true;
+    vid.playsInline = true; vid.setAttribute("playsinline","");
+    vid.preload = "metadata";
+    vid.setAttribute("aria-label", videoLabels[v] || "Video of our food");
+    if(reduceMotion){ vid.controls = true; } else { vid.autoplay = true; }
+    slot.appendChild(vid);
+    gal.appendChild(slot);
+    mediaCount++;
+  }
+  // photos: only render slots that actually have an image
+  for(let i=1;i<=6;i++){
+    const url = set["gallery"+i];
+    if(!url) continue;
+    const slot = document.createElement("div");
+    slot.className = "gal-slot reveal";
+    const img = document.createElement("img");
+    img.src = url; img.alt = "The Soul Spot — plate " + i; img.loading = "lazy";
+    slot.appendChild(img);
+    gal.appendChild(slot);
+    mediaCount++;
+  }
+  if(mediaCount === 0 && gallerySection){ gallerySection.style.display = "none"; }
+  // testimonial video — click to play, never autoplays (it has sound)
+  if(set.testimonial_video){
+    const wrap = document.getElementById("testimonial-video-wrap");
+    if(wrap){
+      wrap.style.display = "";
+      const tv = document.getElementById("testimonial-video");
+      tv.src = set.testimonial_video;
+    }
+  }
+  observeReveals();
+}
+
+/* ---------------- CSV loading (robust to quoted commas) ---------------- */
+function parseCSV(text){
+  const rows = [];
+  let row = [], cell = "", inQ = false;
+  for(let i=0;i<text.length;i++){
+    const c = text[i];
+    if(inQ){
+      if(c === '"' && text[i+1] === '"'){ cell += '"'; i++; }
+      else if(c === '"'){ inQ = false; }
+      else cell += c;
+    } else {
+      if(c === '"') inQ = true;
+      else if(c === ","){ row.push(cell); cell = ""; }
+      else if(c === "\n" || c === "\r"){
+        if(cell !== "" || row.length){ row.push(cell); rows.push(row); row = []; cell = ""; }
+      }
+      else cell += c;
+    }
+  }
+  if(cell !== "" || row.length){ row.push(cell); rows.push(row); }
+  return rows;
+}
+
+async function loadAll(){
+  // Menu
+  let menuLoaded = false;
+  if(MENU_CSV){
+    try{
+      const rows = parseCSV(await (await fetch(MENU_CSV)).text());
+      const data = { updated:"", days:[], sides:[] };
+      const dayMap = {};
+      rows.slice(1).forEach(r=>{
+        const [section, script, name, price, updated] = r.map(x=>(x||"").trim());
+        if(updated) data.updated = updated;
+        if(!section || !name) return;
+        if(section.toLowerCase() === "side"){
+          data.sides.push({ name, price });
+        } else {
+          if(!dayMap[section]){
+            dayMap[section] = { script: script || "", name: section, items: [] };
+            data.days.push(dayMap[section]);
+          }
+          dayMap[section].items.push({ name, price });
+        }
+      });
+      if(data.days.length || data.sides.length){ renderMenu(data); menuLoaded = true; }
+    }catch(e){ /* fall back below */ }
+  }
+  if(!menuLoaded) renderMenu(DEFAULT_MENU);
+
+  // Catering menu (optional third tab)
+  if(CATERING_CSV){
+    try{
+      const rows = parseCSV(await (await fetch(CATERING_CSV)).text());
+      const map = {};
+      rows.slice(1).forEach(r=>{
+        const [section, name, half, full, note, sub] = r.map(x=>(x||"").trim());
+        if(!section || !name) return;
+        if(!map[section]){
+          map[section] = { name: section, sub: sub || "Two Size Pans", items: [] };
+          CATERING_DATA.groups.push(map[section]);
+        }
+        const star = /^\*/.test(name);
+        map[section].items.push({ name: name.replace(/^\*\s*/,""), half, full, note, star });
+      });
+    }catch(e){ /* section simply stays hidden */ }
+  }
+
+  // Settings
+  let settings = {};
+  if(SETTINGS_CSV){
+    try{
+      const rows = parseCSV(await (await fetch(SETTINGS_CSV)).text());
+      rows.slice(1).forEach(r=>{
+        const key = (r[0]||"").trim(), value = (r[1]||"").trim();
+        if(key) settings[key] = value;
+      });
+    }catch(e){ /* fall back to defaults */ }
+  }
+  applySettings(settings);
+}
+
+/* ---------------- Form (Netlify AJAX submit) ---------------- */
+async function handleSubmit(e){
+  e.preventDefault();
+  const form = e.target;
+  const note = document.getElementById("form-note");
+  const btn = document.getElementById("submit-btn");
+  btn.disabled = true; btn.textContent = "Sending…";
+  try{
+    const res = await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(new FormData(form)).toString()
+    });
+    if(!res.ok) throw new Error("Submit failed");
+    form.reset();
+    note.textContent = "Sent! We'll get back to you soon — thank you.";
+    note.style.color = "var(--gold-bright)";
+  }catch(err){
+    note.innerHTML = 'Couldn\'t send just now. Please call <a href="tel:+13474614663" style="color:var(--gold)">347-461-4663</a> or email <a href="mailto:TheSoulSpot919@gmail.com" style="color:var(--gold)">TheSoulSpot919@gmail.com</a>.';
+    note.style.color = "var(--gold-bright)";
+  }
+  btn.disabled = false; btn.textContent = "Send Catering Inquiry";
+}
+
+/* ---------------- UI ---------------- */
+function toggleNav(btn){
+  const links = document.getElementById("navlinks");
+  const open = links.classList.toggle("open");
+  btn.setAttribute("aria-expanded", open);
+}
+document.querySelectorAll("#navlinks a").forEach(a=>a.addEventListener("click",()=>{
+  document.getElementById("navlinks").classList.remove("open");
+}));
+
+let io;
+function observeReveals(){
+  if(!io){
+    io = new IntersectionObserver(entries=>{
+      entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); } });
+    },{ threshold:.1 });
+  }
+  document.querySelectorAll(".reveal:not(.in)").forEach(el=>io.observe(el));
+}
+
+document.getElementById("year").textContent = new Date().getFullYear();
+loadAll();
+observeReveals();
+</script>
+</body>
+</html>
